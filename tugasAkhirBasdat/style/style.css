@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header_atas
+{
+    list-style-type: none;
+    margin-right: 0px;
+    background-color: orange;
+    padding: 20px;
+}
+
+.header_bawah
+{
+    padding: 120px 60px;
+    background-image: url("../assets/images/cafe1.jpeg");
+    background-size: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+}
+
+header
+{
+    padding-bottom: 25px;
+}
+
+.navbar
+{
+    display: inline;
+    list-style-type: none;
+}
+
+.navbar ul li
+{
+    display: block;
+}
+
+.card 
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+.featured-image 
+{
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+main
+{
+    overflow: auto;
+}
+
+#kategori-makanan
+{
+    float: left;
+    width: 45%;
+    padding-left: 275px;
+}
+
+#kategori-minuman
+{
+    float: right;
+    width: 45%;
+    padding-right: 275px;   
+}
+
+.card:hover
+{
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+footer
+{
+    padding: 20px 25px;
+    color: white;
+    background-color: orange;
+    font-weight: lighter;
+}
+
+.inline
+{
+    display: inline;
+}

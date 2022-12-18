@@ -1,0 +1,68 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header 
+{
+    padding-bottom: 25px;
+}
+
+header h1
+{
+    padding-left: 25px;
+    color: orange;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+header h2
+{
+    text-align: center;
+}
+
+main
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: orange;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+form
+{
+    padding-top: 20px;
+    float: right;
+    padding-right: 100px;
+}
+
+.input
+{
+    padding-top: 20px;
+    padding-right: 20px;
+    text-align: right;
+    padding-bottom: 20px;
+}
+
+.footer
+{
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+img
+{
+    padding: 75px 25px 25px 25px;
+    width: 250px;
+    height: 150px;
+    border-radius: 125px 100px 125px 100px;
+    object-fit: cover;
+    object-position: center;
+}
+

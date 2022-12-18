@@ -1,0 +1,68 @@
+CREATE DATABASE basdat;
+
+\c basdat;
+
+CREATE TABLE users(
+id SERIAL PRIMARY KEY,
+nama_lengkap VARCHAR(255) NOT NULL,
+no_telp VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL,
+username VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE kategori(
+id SERIAL PRIMARY KEY,
+nama VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE makanan(
+id SERIAL PRIMARY KEY,
+id_kategori INT NOT NULL,
+nama VARCHAR(255) NOT NULL,
+harga INT NOT NULL,
+CONSTRAINT makanan_id_kategori_fkey FOREIGN KEY (id_kategori)
+	REFERENCES kategori (id) MATCH SIMPLE
+	ON UPDATE NO ACTION ON DELETE SET NULL
+);
+
+CREATE TABLE pesanan(
+id SERIAL NOT NULL,
+id_users INT NOT NULL,
+id_makanan INT NOT NULL,
+alamat_tujuan VARCHAR(255) NOT NULL,
+kuantitas INT NOT NULL,
+PRIMARY KEY (id, id_users, id_makanan),
+CONSTRAINT pesanan_id_users_fkey FOREIGN KEY (id_users)
+	REFERENCES users (id) MATCH SIMPLE
+	ON UPDATE NO ACTION ON DELETE SET NULL,
+CONSTRAINT pesanan_id_makanan_fkey FOREIGN KEY (id_makanan)
+	REFERENCES makanan (id) MATCH SIMPLE
+	ON UPDATE NO ACTION ON DELETE SET NULL
+);
+
+
+
+INSERT INTO kategori (id, nama) VALUES (1, 'Main');
+INSERT INTO kategori (id, nama) VALUES (2, 'Side');
+INSERT INTO kategori (id, nama) VALUES (3, 'Drinks');
+INSERT INTO kategori (id, nama) VALUES (4, 'Beverages');
+
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (1, 1, 'Hamburger Steak', 25000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (2, 1, 'Beef and Barley Soup', 20000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (3, 1, 'Chicken Cordon Bleu', 35000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (4, 1, 'Beef Taco Skillet', 25000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (5, 1, 'Baked Chicken Tacos', 25000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (6, 2, 'Buttermilk Cornbread', 15000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (7, 2, 'Creamy Mashed Potatoes', 15000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (8, 2, 'Green Bean Caserole', 18000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (9, 2, 'Macaroni Salad', 18000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (10, 2, 'Fried Cabbage', 15000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (11, 3, 'Banana Milk Coffee', 15000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (12, 3, 'Cappuccino on Ice', 12000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (13, 3, 'Creamy Iced Coffee', 10000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (14, 3, 'Lemon Soda', 12000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (15, 4, 'Hot Chocolate', 15000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (16, 4, 'Cafe Au Lait', 14000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (17, 4, 'Ginger Tea', 12000);
+INSERT INTO makanan (id, id_kategori, nama, harga) VALUES (18, 4, 'Fresh Mint Tea', 10000);
